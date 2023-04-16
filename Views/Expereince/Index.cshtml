@@ -1,0 +1,59 @@
+﻿@using EntityLayer.Concrete
+@model List<Expereince>
+@{
+    //ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_coronolayout.cshtml";
+
+
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyim Listesi</h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Tarih</th>
+                            <th>Açıklama</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+
+                                <td>@item.ExpereinceID</td>
+                                <td>@item.Name</td>
+                                <td>@item.Date </td>
+                                <td>@item.Decription </td>
+                                <td><a href="/Expereince/ExpereinceUpdate/@item.ExpereinceID" class="btn btn-outline-success"> Güncelle</a></td>
+                                <td><a href="/Expereince/DeletExpereince/@item.ExpereinceID" class="btn btn-outline-danger"> Sil</a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<a href="/Expereince/ExpereinceAdd/" class="btn btn-outline-primary"> Yeni deneyim ekle</a>
+
+
+

@@ -1,0 +1,52 @@
+﻿@using EntityLayer.Concrete
+@model List<Announcement2>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Dururu Listesi</h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Tarih</th>
+                            <th>Satus</th>
+                            <th>Açıklama</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+
+                                <td>@item.Announcement2ID</td>
+                                <td>@item.Tıtle</td>
+                                <td>@item.Date </td>
+                                <td>@item.Status </td>
+                                <td>@item.Content</td>
+                                <td><a href="/Announcement2/Announcement2Update/@item.Announcement2ID" class="btn btn-outline-success"> Güncelle</a></td>
+                                <td><a href="/Announcement2/DeletAnnouncement2/@item.Announcement2ID" class="btn btn-outline-danger"> Sil</a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<a href="/Announcement2/Announcement2Add/" class="btn btn-outline-primary"> Yeni Duyuru ekle</a>

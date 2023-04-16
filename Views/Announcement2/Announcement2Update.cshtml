@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Announcement2
+@{
+    ViewData["Title"] = "Announcement2Update";
+    Layout = "~/Views/Shared/_coronolayout.cshtml";
+}
+
+
+<form method="post">
+
+    <br />
+    <h1>Servisler Düzenleme </h1>
+    <input type="hidden" asp-for="Announcement2ID" />
+    <div class="form-group">
+
+
+        @Html.Label("Başlık")
+        <input type="text" asp-for="Tıtle" class="form-control" />
+    </div>
+
+    <div class="form-group">
+
+        @Html.Label("Tarih")*
+        <input type="text" asp-for="Date" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+
+        @Html.Label("Status")*
+        <input type="text" asp-for="Status" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+
+        @Html.Label("Açıklama")*
+        <input type="text" asp-for="Content" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>
+

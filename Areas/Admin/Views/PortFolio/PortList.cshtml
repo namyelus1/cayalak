@@ -1,0 +1,66 @@
+﻿@using EntityLayer.Concrete
+@model List<PortFolio>
+@{
+    ViewData["Title"] = "PortList";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Porje listesi</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>  Name </th>
+                            <th> Resim1 </th>
+                            <th> Resim2  </th>
+                            <th> ProjeUrl </th>
+                            <th> Platform </th>
+                            <th> Price </th>
+                            <th> Value </th>
+                            <th> Status </th>
+                            <th> Sil </th>
+                            <th> Güncelle </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+                                <td>
+                                    @item.Name
+
+                                </td>
+
+                                <td>
+                                    <img src="@item.ImageUrl" />
+
+                                </td>
+                                <td>
+                                    <img src="@item.ImageUrlp" />
+                                </td>
+                                <td> @item.ProjetUrl</td>
+                                <td>@item.Platform </td>
+                                <td> @item.Price </td>
+                                <td> @item.Value</td>
+                                <td> @item.Status</td>
+                                <td><a href="/PortFolio/DeletPortFolio/@item.PortFolioID" class="btn btn-outline-info">Sil</a></td>
+                                <td><a href="/PortFolio/EditPortFolio/@item.PortFolioID" class="btn btn-outline-success">Update</a></td>
+
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="/Admin/PortFolio/AddPortoFolio" class="btn btn-outline-success">Port Folio Ekle</a>
+

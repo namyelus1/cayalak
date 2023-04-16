@@ -1,0 +1,107 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "EditAbout";
+    Layout = "~/Views/Shared/_coronolayout.cshtml";
+}
+
+<form method="post">
+
+
+    <input type="hidden" asp-for="AboutID" />
+    <div class="form-group">
+
+@Html.Label("Başlık")
+    <input type="text" asp-for="Title" class="form-control" />
+</div>
+<br />
+<div class="form-group">
+
+@Html.Label("Yaş")
+    <input type="text" asp-for="Age" class="form-control" />
+</div>
+<br />
+<div class="form-group">
+
+@Html.Label("Mail")
+    <input type="text" asp-for="Mail" class="form-control" />
+</div>
+<br />
+<div class="form-group">
+
+@Html.Label("Adres")
+<input type="text" asp-for="Adres" class="form-control" />
+</div>
+<br />
+<div class="form-group">
+
+@Html.Label("Resim")
+<input type="text" asp-for="ImageUrl" class="form-control" />
+</div>
+<br />
+<div class="form-group">
+
+<!--@Html.Label("Açıklama")-->
+<input type="text" asp- class="form-control" />
+@Html.TextAreaFor(x => x.Description, 10, 3, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>
+
+
+@*<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje de Çalıştığım Diller </h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>Image</th>
+                            <th>Başlık</th>
+                            <th>Değer</th>
+
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <img alt="Image placeholder" src="@item.ImagUrl" style="width:60px;height:60px" />
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>@item.Title </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <span class="completion mr-2">@item.Value</span>
+                                        <div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-indigo" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td><a href="/Skill/UpdateSkill/" class="btn btn-outline-success"> Güncelle</a></td>
+                                <td><a href="/Skill/DeletSkill/" class="btn btn-outline-danger"> Sil</a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+            <a href="/Skill/AddSkill/" class="btn btn-outline-primary"> Yeni deneyim ekle</a>
+        </div>
+    </div>
+</div>*@

@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Feature
+@{
+    ViewData["Title"] = "EditFeature";
+    Layout = "~/Views/Shared/_coronolayout.cshtml";
+}
+
+<form method="post">
+    <div class="form-control">
+        @Html.Label("FeatureID")
+        <input type="hidden" asp-for="FeatureID" />
+    </div>
+    <br />
+
+    <div class="form-group">
+
+        @Html.Label("Ad")
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+
+        @Html.Label("Açıklama")
+        <input type="text" asp-for="Title" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+
+        @Html.Label("Başlık")
+        <input type="text" asp-for="Header" class="form-control" />
+    </div>
+    <br />
+
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>
+

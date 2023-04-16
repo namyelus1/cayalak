@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Concrete.PortFolio
+@{
+    ViewData["Title"] = "AddPortoFolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Ad Soyad")
+        <input type="text" asp-for="Name" class="form-control" />
+
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Resim")
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("TwitterUrl")
+        <input type="text" asp-for="ImageUrlp" class="form-control" />
+
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("IntagramUrl")
+        <input type="text" asp-for="ProjetUrl" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Statu")
+        <input type="text" asp-for="Platform" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Açıklama")
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Açıklama")
+        <input type="text" asp-for="Status" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Açıklama")
+        <input type="text" asp-for="Value" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Oluştur</button>
+</form>
+
+

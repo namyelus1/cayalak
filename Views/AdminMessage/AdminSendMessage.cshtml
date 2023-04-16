@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminSendMessage";
+    Layout = "~/Views/Shared/_coronolayout.cshtml";
+}
+
+<form method="post">
+    <div class="form-group ">
+
+        <h1>Yeni Mesaj  Sayfası </h1>
+        @Html.Label("Konu")
+
+        <input type="text" asp-for="Subject" class="form-control" />
+
+    </div>
+    <br />
+
+    <div class="form-group">
+
+        @Html.Label("Alıcı")
+        <input type="text" asp-for="Receiver" class="form-control" />
+
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("İçerik")
+
+        <input type="text" asp-for="MessageContent" class="form-control" />
+
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Oluştur</button>
+    <button class="btn btn-outline-primary">iptal</button>
+</form>
+
